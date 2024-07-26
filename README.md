@@ -70,7 +70,7 @@ Result figures are located in
 './taseq_draw_00000000000000/'    
 
 #### Commands
-'''
+```
 taseq_hapcall -h
 usage: taseq_hapcall -I <Directory containing input FASTQ>
                      -R <File of reference FASTA>
@@ -95,8 +95,9 @@ options:
   --quality_threshold   If the quality of the bases at both ends of a read
                         is below this threshold, it is deleted.
   -v, --version         show program's version number and exit
-'''
-'''
+```
+
+```
 taseq_genotype -h
 usage: taseq_genotype -I <VCF file which is the output of taseq_hapcall>
                       -p1 <Parent name genotyped as A>
@@ -116,8 +117,9 @@ options:
                     Default value is the threshold for p=0.05
   --noise_level     When genotyping as homozygous, minor reads below this ratio will be ignored.
   -v, --version     show program's version number and exit
-'''
-'''
+```
+
+```
 taseq_filter -h
 usage: taseq_filter -I <TSV file which is the output of taseq_genotype>
                     --parent_sample1 <Parent sample expected to be A>
@@ -139,8 +141,9 @@ options:
                      Markers whose MAF are lower than this,
                      they are removed.
   -v, --version      show program's version number and exit
-'''
-'''
+```
+
+```
 taseq_draw -h
 usage: taseq_draw -I <TSV file which is the output of taseq_filter>
                   -F <FASTA Index file to draw chromosome>
@@ -158,4 +161,4 @@ options:
   --name_A       Name of line A (Default: A).
   --name_B       Name of line B (Default: B).
   -v, --version  show program's version number and exit
-'''
+```
