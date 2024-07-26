@@ -291,7 +291,7 @@ class Params(object):
                             action='store',
                             default='B',
                             type=str,
-                            help='Name of line A (Default: B).',
+                            help='Name of line B (Default: B).',
                             metavar='')
 
         # set version
