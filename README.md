@@ -70,11 +70,14 @@ Result figures are located in
 './taseq_draw_00000000000000/'    
 
 #### Commands
-taseq_hapcall -I <Directory containing input FASTQ>
-              -R <File of reference FASTA>
-              -V <File of target VCF>
-              ... 
+'''
+taseq_hapcall -h
+usage: taseq_hapcall -I <Directory containing input FASTQ>
+                     -R <File of reference FASTA>
+                     -V <File of target VCF>
+                     ... 
 options:
+  -h, --help            show this help message and exit
   -I , --input          Directory containing input FASTQ.
                         This directory must contain only fastq file used in genotyping.
                         gzip (fastq.gz) also supported.
@@ -91,13 +94,16 @@ options:
   --minlen              Ignore reads which are shorter than this value after trimming.
   --quality_threshold   If the quality of the bases at both ends of a read
                         is below this threshold, it is deleted.
-
-
-taseq_genotype -I <VCF file which is the output of taseq_hapcall>
-               -p1 <Parent name genotyped as A>
-               -p2 <Parent name genotyped as B>
-               ... 
+  -v, --version         show program's version number and exit
+'''
+'''
+taseq_genotype -h
+usage: taseq_genotype -I <VCF file which is the output of taseq_hapcall>
+                      -p1 <Parent name genotyped as A>
+                      -p2 <Parent name genotyped as B>
+                      ... 
 options:
+  -h, --help        show this help message and exit
   -I , --input      VCF file which is the output of taseq_hapcall.
   -p1 , --parent1   Parent name genotyped as A.
                     Use the name of vcf column in the input file of taseq_hapcall.
@@ -109,13 +115,16 @@ options:
   --hetero_chi      Threshold value of chi-square when genotyping as hetero.
                     Default value is the threshold for p=0.05
   --noise_level     When genotyping as homozygous, minor reads below this ratio will be ignored.
-
-
-taseq_filter -I <TSV file which is the output of taseq_genotype>
-             --parent_sample1 <Parent sample expected to be A>
-             --parent_sample2 <Parent sample expected to be B>
-             ... 
+  -v, --version     show program's version number and exit
+'''
+'''
+taseq_filter -h
+usage: taseq_filter -I <TSV file which is the output of taseq_genotype>
+                    --parent_sample1 <Parent sample expected to be A>
+                    --parent_sample2 <Parent sample expected to be B>
+                    ... 
 options:
+  -h, --help         show this help message and exit
   -I , --input       TSV file which is the output of taseq_genotype.
   --parent_sample1   Parent sample expected to be genotype A.
                      This must be specified if parental lines are included in your samples.
@@ -129,12 +138,15 @@ options:
   --minor_freq       Threshold of minor allele frequency (MAF).
                      Markers whose MAF are lower than this,
                      they are removed.
-
-
-taseq_draw -I <TSV file which is the output of taseq_filter>
-           -F <FASTA Index file to draw chromosome>
-           ... 
+  -v, --version      show program's version number and exit
+'''
+'''
+taseq_draw -h
+usage: taseq_draw -I <TSV file which is the output of taseq_filter>
+                  -F <FASTA Index file to draw chromosome>
+                  ... 
 options:
+  -h, --help     show this help message and exit
   -I , --input   TSV file which is the output of taseq_filter.
   -F , --fai     FASTA Index file to draw chromosome.
   --color_A      Color of genotype A (Default: orange).
@@ -145,3 +157,5 @@ options:
   --color_miss   Color of missing genotype (Default: gray).
   --name_A       Name of line A (Default: A).
   --name_B       Name of line B (Default: B).
+  -v, --version  show program's version number and exit
+'''
