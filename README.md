@@ -1,11 +1,13 @@
 # taseq
-Data analysis tools for targeted amplicon sequencing (TA-seq) 
+Data analysis tools for targeted amplicon sequencing (TA-seq)
 (Renamed from 'tasdos')
 #### version 1.0.0 (2024.7.26)
 
+![sample.png](./fig/fig01.png)
+
 ## Outline
 
-'taseq' is a set of tools for down stream analysis of targeted amplicon sequencing (TA-seq), 
+'taseq' is a set of tools for down stream analysis of targeted amplicon sequencing (TA-seq),
 which is one of the most efficient genotyping method.
 Input files are paired end fastq and VCF containing target SNP which was made by 'mkdesigner'.
 We can get genotype file which is suitable to QTL analysis using R/qtl software just in few steps.
@@ -75,7 +77,7 @@ taseq_hapcall -h
 usage: taseq_hapcall -I <Directory containing input FASTQ>
                      -R <File of reference FASTA>
                      -V <File of target VCF>
-                     ... 
+                     ...
 options:
   -h, --help            show this help message and exit
   -I , --input          Directory containing input FASTQ.
@@ -102,7 +104,7 @@ taseq_genotype -h
 usage: taseq_genotype -I <VCF file which is the output of taseq_hapcall>
                       -p1 <Parent name genotyped as A>
                       -p2 <Parent name genotyped as B>
-                      ... 
+                      ...
 options:
   -h, --help        show this help message and exit
   -I , --input      VCF file which is the output of taseq_hapcall.
@@ -124,7 +126,7 @@ taseq_filter -h
 usage: taseq_filter -I <TSV file which is the output of taseq_genotype>
                     --parent_sample1 <Parent sample expected to be A>
                     --parent_sample2 <Parent sample expected to be B>
-                    ... 
+                    ...
 options:
   -h, --help         show this help message and exit
   -I , --input       TSV file which is the output of taseq_genotype.
@@ -147,7 +149,7 @@ options:
 taseq_draw -h
 usage: taseq_draw -I <TSV file which is the output of taseq_filter>
                   -F <FASTA Index file to draw chromosome>
-                  ... 
+                  ...
 options:
   -h, --help     show this help message and exit
   -I , --input   TSV file which is the output of taseq_filter.
