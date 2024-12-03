@@ -26,7 +26,7 @@ class Draw(object):
         self.name_b = args.name_B
 
         #This is the name of output directory
-        self.dir = 'taseq_draw_{}'.format(time_for_filename())
+        self.dir = args.name
         os.mkdir(self.dir)
 
         #make input TSV to dataframe

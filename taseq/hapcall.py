@@ -20,6 +20,7 @@ args = pm.set_options()
 
 class Hapcall(object):
     def __init__(self, args):
+        pm.hapcall_check_args(args)
         self.args = args
         self.ref = args.ref
         self.input = args.input #fastq directry
@@ -30,7 +31,7 @@ class Hapcall(object):
         self.cpu = args.cpu
 
         #This is the name of output directory
-        self.dir = 'taseq_hapcall_{}'.format(time_for_filename())
+        self.dir = args.name
 
         #get sample list
         tmp_fqlist = os.listdir(self.input)

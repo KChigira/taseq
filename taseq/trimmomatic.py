@@ -17,18 +17,19 @@ class Trimmomatic(object):
 
     def run(self):
         #Check the input files are pair end
-        tmp = '{}/{}_*.fastq.gz'.format(self.fqdir, self.sn)
-        filelist = glob.glob(tmp)
-        if len(filelist) != 2:
+        tmp = ['{}/{}_*R1*'.format(self.fqdir, self.sn), '{}/{}_*R2*'.format(self.fqdir, self.sn)]
+        filelist_1 = glob.glob(tmp[0])
+        filelist_2 = glob.glob(tmp[1])
+        if len(filelist_1) != 1 or len(filelist_2) != 1:
             print(time_stamp(), 
-                  '!!ERROR!! Input fastq are not pair end or more than 2 files exist for one sample name.\n', flush=True)
+                  '!!ERROR!! Program could not parse the name of input fastq.\n', flush=True)
             sys.exit(1)
             
 
         if self.ad == 'NONE':
             cmd1 = 'trimmomatic PE -threads 1 -phred33 \
-                    {0}/{1}*_R1_*.fastq.gz \
-                    {0}/{1}*_R2_*.fastq.gz \
+                    {0}/{1}_*R1* \
+                    {0}/{1}_*R2* \
                     {2}/fastq/{1}_R1_trimmed.fastq.gz \
                     {2}/fastq/{1}_R1_unpaired.fastq.gz \
                     {2}/fastq/{1}_R2_trimmed.fastq.gz \
@@ -53,8 +54,8 @@ class Trimmomatic(object):
                 sys.exit(1)
         else:
             cmd1 = 'trimmomatic PE -threads 1 -phred33 \
-                    {0}/{1}*_R1_*.fastq.gz \
-                    {0}/{1}*_R2_*.fastq.gz \
+                    {0}/{1}_*R1* \
+                    {0}/{1}_*R2* \
                     {2}/fastq/{1}_R1_trimmed.fastq.gz \
                     {2}/fastq/{1}_R1_unpaired.fastq.gz \
                     {2}/fastq/{1}_R2_trimmed.fastq.gz \

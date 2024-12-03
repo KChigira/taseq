@@ -17,7 +17,7 @@ class Genotype(object):
         self.hchi = args.hetero_chi
         self.noise = args.noise_level
         #This is the name of output directory
-        self.dir = 'taseq_genotype_{}'.format(time_for_filename())
+        self.dir = args.name
         os.mkdir(self.dir)
 
         #make input VCF to dataframe

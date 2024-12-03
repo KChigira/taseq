@@ -17,7 +17,7 @@ class Filter(object):
         self.mfreq = args.minor_freq
        
         #This is the name of output directory
-        self.dir = 'taseq_filter_{}'.format(time_for_filename())
+        self.dir = args.name
         os.mkdir(self.dir)
 
         #make input TSV to dataframe
