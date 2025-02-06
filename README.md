@@ -139,7 +139,7 @@ options:
   --mindep          Minimum depth to genotype.
                     Variants with depth lower than this
                     will be genotyped as missing.
-                    Default: 6.
+                    Default: 10.
   --hetero_chi      Threshold value of chi-square when genotyping as hetero.
                     Default value is 3.84 (the threshold for p=0.05).
   --noise_level     When genotyping as homozygous, minor reads below this ratio will be ignored.

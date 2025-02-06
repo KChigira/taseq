@@ -170,12 +170,12 @@ class Params(object):
         
         parser.add_argument('--mindep',
                             action='store',
-                            default=6,
+                            default=10,
                             type=int,
                             help=('Minimum depth to genotype.\n'
                                   'Variants with depth lower than this\n'
                                   'will be genotyped as missing.\n'
-                                  'Default: 6.\n'),
+                                  'Default: 10.\n'),
                             metavar='')
 
         parser.add_argument('--hetero_chi',
