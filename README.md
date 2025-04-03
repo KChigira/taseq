@@ -20,9 +20,19 @@ We can get genotype file which is suitable to QTL analysis using R/qtl software 
 
 ## Install
 
-### Install via PyPI
+### Supported environment
+* OS: Ubuntu 24.04 LTS
+* Processer: Higher grade than 7th Gen Intel® Core™ Series
+* Memory: > 16 GB
+
+It may work even if the condition is different.
+
+### Install via conda package manager
+We recommend that you install the taseq in a dedicated environment.
 ```
-pip install taseq
+conda create -n taseq
+conda activate taseq
+conda install taseq -c bioconda -c conda-forge
 ```
 
 #### Dependencies
@@ -34,7 +44,7 @@ pip install taseq
  - picard >=3.1.1
  - bwa >=0.7.18
 
-These must be installed manually.
+These must be installed automatically.
 
 ## Usage
 #### Tutorial
